@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#c8b0f2">
+<title>Laís 💗</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#faf6ff;color:#493b57}
+.app{max-width:430px;min-height:100vh;margin:auto;padding-bottom:90px}
+.splash{position:fixed;inset:0;z-index:20;background:linear-gradient(145deg,#cbb4f4,#f9d7e7);display:grid;place-items:center;text-align:center;animation:bye 1.8s forwards}
+.splash div{animation:up .8s ease}.logo{width:105px;height:105px;border-radius:34px;background:#fff;display:grid;place-items:center;font-size:48px;margin:auto;box-shadow:0 15px 40px #8b6aa933}.splash h1{font-size:37px;margin:15px 0 3px}.splash p{margin:0;font-size:14px}
+@keyframes bye{0%,75%{opacity:1}100%{opacity:0;visibility:hidden}}@keyframes up{from{transform:translateY(15px);opacity:0}to{transform:none;opacity:1}}
+header{padding:25px 20px 12px;display:flex;justify-content:space-between;align-items:center}.tiny{font-size:12px;opacity:.6}.hello{font-size:27px;font-weight:800}.top{width:45px;height:45px;border:0;border-radius:16px;background:#fff;box-shadow:0 8px 25px #72578d18;font-size:22px}
+main{padding:7px 18px}.screen{display:none}.screen.active{display:block}.hero{padding:22px;border-radius:28px;background:linear-gradient(135deg,#cbb4f4,#e8dcff 55%,#ffd7e7);box-shadow:0 12px 30px #72578d18}.hero .big{font-size:38px}.hero h2{margin:6px 0;font-size:23px}.hero p{font-size:13px}
+.card{background:#fff;border-radius:22px;padding:17px;margin:13px 0;box-shadow:0 9px 27px #72578d12}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.stat{background:#fff0f6;border-radius:18px;text-align:center;padding:15px}.stat b{font-size:24px;display:block}.small{font-size:12px;opacity:.65}.badge{display:inline-block;background:#f8efff;border-radius:10px;padding:6px 9px;font-size:11px;margin-top:6px}.bar{height:9px;border-radius:20px;background:#eee7f5;overflow:hidden;margin:10px 0}.fill{height:100%;width:0;background:linear-gradient(90deg,#bda0ee,#f2b8d2);border-radius:20px}.btn{border:0;background:#cbb4f4;color:#fff;border-radius:15px;padding:13px 15px;font-weight:700;width:100%;font-size:14px}.ghost{background:#fff;border:1px solid #eadff2;color:#624d70}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);height:78px;background:#ffffffee;backdrop-filter:blur(14px);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-top:1px solid #eee4f3}.nav{border:0;background:none;border-radius:16px;color:#9a8ca3;font-size:10px;font-weight:700}.nav span{display:block;font-size:21px;margin-bottom:2px}.nav.active{background:#eee4ff;color:#72578d}
+.days{display:flex;gap:8px;overflow:auto;padding:3px 0 8px}.day{min-width:49px;height:58px;border:0;border-radius:15px;background:#fff;box-shadow:0 6px 18px #72578d12;color:#594a63;font-weight:700}.day small{display:block;font-size:9px;opacity:.6;margin-top:3px}.day.sel{background:#cbb4f4;color:#fff}.exercise{border:1px solid #f0e7f3;border-radius:17px;padding:13px;margin-top:9px}.sets{display:flex;gap:7px;margin-top:9px}.set{border:0;width:29px;height:29px;border-radius:9px;background:#f0e9f7}.set.ok{background:#cbb4f4;color:#fff}.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.cal div{text-align:center;font-size:11px}.date{height:40px;border:0;border-radius:12px;background:#fff;color:#594a63}.today{background:#cbb4f4;color:#fff}.avatar{width:95px;height:95px;border-radius:31px;margin:8px auto 12px;background:linear-gradient(135deg,#cbb4f4,#ffd7e7);display:grid;place-items:center;font-size:45px}.center{text-align:center}.setting{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #f2eaf4}.setting:last-child{border:0}
+</style>
+</head>
+<body>
+<div class="splash"><div><div class="logo">🌸</div><h1>Laís</h1><p>minha rotina 💗</p></div></div>
+<div class="app">
+<header><div><div class="tiny">MINHA ROTINA</div><div class="hello">Oi, Laís! 💗</div></div><button class="top">🌷</button></header>
+<main>
+<section id="home" class="screen active">
+<div class="hero"><div class="big">✨</div><h2>Seu dia, do seu jeitinho.</h2><p>Treino, alimentação, água e organização em um só lugar.</p></div>
+<div class="card"><div class="row"><div><b>Treino de hoje</b><div class="small">Veja seus exercícios e marque as séries.</div></div><span class="badge" id="pct">0%</span></div><div class="bar"><div class="fill" id="homefill"></div></div><button class="btn" onclick="go('treino')">Começar treino 💪🏻</button></div>
+<div class="grid"><div class="stat"><b id="days">0</b><span class="small">dias concluídos</span></div><div class="stat"><b id="series">0</b><span class="small">séries marcadas</span></div></div>
+<div class="card"><div class="row"><b>💧 Água</b><b id="water">0/8</b></div><div class="bar"><div class="fill" id="waterfill"></div></div><button class="btn ghost" onclick="water()">+ adicionar copo</button></div>
+</section>
+
+<section id="treino" class="screen"><h2>🏋️ Treino</h2><p class="small">Toque nas séries conforme for concluindo.</p><div class="days" id="daysbar"></div><div id="ex"></div></section>
+
+<section id="calendar" class="screen"><h2>📅 Calendário</h2><div class="card"><div class="row"><b>Outubro 2026</b><span>🌷</span></div><div class="cal" style="margin-top:14px"><div>D</div><div>S</div><div>T</div><div>Q</div><div>Q</div><div>S</div><div>S</div></div><div class="cal" id="cal"></div></div><div class="card"><b>💗 Sua semana</b><p class="small" style="margin-top:7px">Treino e descanso organizados sem pressão.</p></div></section>
+
+<section id="progress" class="screen"><h2>📈 Progresso</h2><p class="small">Acompanhe sua constância e suas pequenas vitórias.</p><div class="grid"><div class="stat"><b id="pd">0</b><span class="small">dias</span></div><div class="stat"><b id="ps">0</b><span class="small">séries</span></div><div class="stat"><b id="pw">0</b><span class="small">copos</span></div><div class="stat"><b id="pe">0</b><span class="small">exercícios</span></div></div><div class="card"><b>🌸 Constância semanal</b><div class="bar"><div class="fill" id="progfill"></div></div><span class="small" id="progtext">0 de 5 dias concluídos</span></div><div class="card"><b>✨ Registro</b><p class="small" style="margin-top:7px">Você poderá anotar carga, repetições e observações de cada treino.</p></div></section>
+
+<section id="profile" class="screen"><h2>🎀 Perfil</h2><div class="card center"><div class="avatar">🌸</div><h2>Laís</h2><p class="small">minha rotina • força • saúde</p></div><div class="card"><div class="setting"><span>🎨 Tema</span><b>Lilás + rosa</b></div><div class="setting"><span>🔔 Lembretes</span><b>Ativos</b></div><div class="setting"><span>💗 Nome do app</span><b>Minha Rotina</b></div></div><button class="btn ghost" onclick="reset()">↻ Resetar marcações</button></section>
+</main>
+<nav class="bottom"><button class="nav active" data-id="home" onclick="go('home')"><span>🏠</span>Início</button><button class="nav" data-id="calendar" onclick="go('calendar')"><span>📅</span>Calendário</button><button class="nav" data-id="progress" onclick="go('progress')"><span>📈</span>Progresso</button><button class="nav" data-id="profile" onclick="go('profile')"><span>🎀</span>Perfil</button></nav>
+</div>
+<script>
+const r={
+"Segunda":["Hip thrust|Máquina de hip thrust / Smith|3","Stiff|Barra ou halteres|3","Mesa flexora|Mesa flexora|3","Abdução|Máquina abdutora|3","Afundo|Peso livre ou Smith|2","Dead bug|Colchonete|3"],
+"Terça":["Puxada alta|Máquina/polia de puxada|3","Remada sentada|Máquina de remada ou polia|3","Remada unilateral|Halter ou máquina unilateral|2","Rosca bíceps|Halteres ou barra|2","Tríceps na polia|Polia|2","Prancha|Colchonete|3"],
+"Quarta":[],"Quinta":["Agachamento|Smith ou rack com barra|3","Leg press|Máquina de leg press|3","Cadeira extensora|Cadeira extensora|3","Afundo|Peso livre ou Smith|2","Abdução|Máquina abdutora|3","Elevação de pernas|Colchonete ou banco|2"],
+"Sexta":["Hip thrust|Máquina de hip thrust / Smith|3","Stiff|Barra ou halteres|3","Mesa flexora|Mesa flexora|3","Step-up|Banco/caixa + peso livre|2","Abdução|Máquina abdutora|3","Prancha lateral|Colchonete|2"],
+"Sábado":["Leg press|Máquina de leg press|3","Agachamento|Smith ou rack com barra|3","Mesa flexora|Mesa flexora|3","Cadeira extensora|Cadeira extensora|2","Glute bridge|Smith ou máquina de glúteos|3","Abdução|Máquina abdutora|2"],"Domingo":[]};
+let d="Segunda",s=JSON.parse(localStorage.state||"{}"),w=+localStorage.water||0;
+function go(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("active",x.dataset.id===id));if(id==="treino")draw();if(id==="calendar")calendar();stats()}
+function drawbar(){let b=document.getElementById("daysbar");b.innerHTML="";Object.keys(r).forEach(x=>{let z=document.createElement("button");z.className="day "+(x===d?"sel":"");z.innerHTML=x.slice(0,3)+"<small>"+(r[x].length?"treino":"descanso")+"</small>";z.onclick=()=>{d=x;draw()};b.appendChild(z)})}
+function draw(){drawbar();let e=document.getElementById("ex");e.innerHTML=r[d].length?"":"<div class='card center'><div style='font-size:40px'>🧘🏻‍♀️</div><b>Dia de descanso</b><p class='small' style='margin-top:6px'>Descansar também faz parte da rotina. 💗</p></div>";r[d].forEach((x,i)=>{let [n,m,q]=x.split("|"),h="<div class='exercise'><div class='row'><div><b>"+n+"</b><div class='badge'>🏋️ "+m+"</div></div><b>"+q+" séries</b></div><div class='sets'>";for(let j=0;j<q;j++){let k=d+i+"-"+j;h+="<button class='set "+(s[k]?"ok":"")+"' onclick=\"toggle('"+k+"')\">"+(s[k]?"✓":j+1)+"</button>"}e.innerHTML+=h+"</div></div>"})}
+function toggle(k){s[k]=!s[k];localStorage.state=JSON.stringify(s);draw();stats()}
+function stats(){let n=Object.values(s).filter(Boolean).length;document.getElementById("series").textContent=n;document.getElementById("ps").textContent=n;document.getElementById("pw").textContent=w;document.getElementById("water").textContent=w+"/8";document.getElementById("waterfill").style.width=Math.min(100,w/8*100)+"%";document.getElementById("pd").textContent=0;document.getElementById("pe").textContent=new Set(Object.keys(s).filter(k=>s[k]).map(k=>k.slice(0,-2))).size;document.getElementById("days").textContent=0;document.getElementById("pct").textContent=n+" séries";document.getElementById("homefill").style.width=Math.min(100,n/18*100)+"%"}
+function water(){w++;localStorage.water=w;stats()}
+function reset(){s={};w=0;localStorage.clear();stats();draw()}
+function calendar(){let g=document.getElementById("cal");g.innerHTML="";let first=new Date(2026,9,1).getDay(),total=31;for(let i=0;i<first;i++)g.appendChild(document.createElement("div"));for(let i=1;i<=total;i++){let b=document.createElement("button");b.className="date "+(i===7?"today":"");b.textContent=i;g.appendChild(b)}}
+draw();calendar();stats();
+</script>
+</body></html>
